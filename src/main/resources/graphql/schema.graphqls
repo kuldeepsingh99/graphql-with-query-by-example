@@ -1,0 +1,26 @@
+type Customer {
+  id: ID!
+  name: String!
+  email: String!
+  phone: String
+  address: String
+  age: Int
+  active: Boolean
+  salary: Float
+}
+
+input CustomerInput {
+  name: String
+  email: String
+  phone: String
+  address: String
+  age: Int
+  active: Boolean
+  salary: Float
+}
+
+type Query {
+  customers: [Customer]
+  customer(id: ID!): Customer
+  searchCustomers(filter: CustomerInput): [Customer]!
+}
